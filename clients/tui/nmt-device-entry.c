@@ -26,7 +26,7 @@
 #include "nmt-device-entry.h"
 
 #include <sys/socket.h>
-#include <linux/if_arp.h>
+#include <net/if_arp.h>
 
 #include "nmtui.h"
 

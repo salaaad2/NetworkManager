@@ -13,6 +13,7 @@
 #include <arpa/inet.h>
 #include <sys/socket.h>
 #include <netdb.h>
+#include <netinet/if_ether.h>
 #include <linux/fib_rules.h>
 #include <linux/ip.h>
 #include <linux/if.h>

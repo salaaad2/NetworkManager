@@ -17,7 +17,11 @@
 #include <arpa/inet.h>
 #include <fcntl.h>
 #include <linux/if_addr.h>
-#include <linux/if_arp.h>
+#if defined(__GLIBC__)
+    #include <linux/if_arp.h>
+#else
+    #include <linux/if.h>
+#endif
 #include <linux/rtnetlink.h>
 
 #include "nm-std-aux/unaligned.h"

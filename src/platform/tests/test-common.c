@@ -11,6 +11,7 @@
 #include <sched.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <netinet/if_ether.h>
 #include <linux/if_tun.h>
 
 #include "n-acd/src/n-acd.h"

@@ -15,6 +15,7 @@
 #include <sys/stat.h>
 #include <sys/sendfile.h>
 #include <limits.h>
+#include <asm/types.h>
 
 #include "nm-glib-aux/nm-c-list.h"
 

@@ -15,6 +15,9 @@
 #include <netinet/in.h>
 
 /* For ETH_ALEN and INFINIBAND_ALEN */
+#if !(defined(__GLIBC__) || defined(__UCLIBC__))
+    #include <netinet/if_ether.h>
+#endif
 #include <linux/if_ether.h>
 #include <linux/if_infiniband.h>
 

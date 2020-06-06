@@ -9,6 +9,7 @@
 #include <sys/mount.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <netinet/if_ether.h>
 #include <linux/if_tun.h>
 
 #include "nm-glib-aux/nm-io-utils.h"

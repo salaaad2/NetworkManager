@@ -7,6 +7,7 @@
 
 #include "nm-device-bridge.h"
 
+#include <linux/if_ether.h>
 #include <stdlib.h>
 
 #include "NetworkManagerUtils.h"

@@ -14,7 +14,12 @@
 #include <libudev.h>
 #include <linux/fib_rules.h>
 #include <linux/ip.h>
-#include <linux/if_arp.h>
+#if defined(__GLIBC__)
+    #include <net/if_arp.h>
+#else
+    #include <net/ethernet.h>
+    #include <linux/if.h>
+#endif
 #include <linux/if_bridge.h>
 #include <linux/if_link.h>
 #include <linux/if_tun.h>
