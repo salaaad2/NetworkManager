@@ -12,6 +12,7 @@
 
 #include "nm-glib-aux/nm-jansson.h"
 #include "nm-glib-aux/nm-str-buf.h"
+#include "nm-config.h"
 #include "nm-core-utils.h"
 #include "nm-core-internal.h"
 #include "devices/nm-device.h"
@@ -2276,6 +2277,9 @@ ovsdb_cleanup_initial_interfaces(NMOvsdb *self)
     const OpenvswitchInterface *interface;
     NMUtilsUserData *           data;
     GHashTableIter              iter;
+
+    if (!nm_config_get_first_start(nm_config_get()))
+        return;
 
     if (priv->cleanup_done)
         return;
