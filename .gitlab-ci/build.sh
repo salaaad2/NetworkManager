@@ -4,20 +4,23 @@ set -ex
 
 IS_FEDORA=0
 IS_CENTOS=0
+IS_ALPINE=0
 grep -q '^NAME=.*\(CentOS\)' /etc/os-release && IS_CENTOS=1
 grep -q '^NAME=.*\(Fedora\)' /etc/os-release && IS_FEDORA=1
+grep -q '^NAME=.*\(Alpine\)' /etc/os-release && IS_ALPINE=1
 
 do_clean() {
     git clean -fdx
 }
 
 uname -a
-locale -a
+! which locale || locale -a
 env
 meson --version
 
 ! which dpkg || dpkg -l
 ! which yum  || yum list installed
+! which apk  || apk -v info
 
 # The formatting depends on the version of python black.
 # We have a dedicated test that checks our formatting, which
